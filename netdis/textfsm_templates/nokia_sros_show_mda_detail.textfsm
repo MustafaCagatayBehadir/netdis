@@ -1,0 +1,28 @@
+Value Filldown SLOT (\d+)
+Value MDA (\d+)
+Value TYPE ([-\w]+)
+Value ADMIN_STATE (up|down)
+Value OPERATIONAL_STATE (\S+)
+Value PART_NUMBER (.+)
+Value SERIAL_NUMBER (\S+)
+
+Start
+  ^===============================================================================
+  ^MDA ${SLOT}/${MDA} detail
+  ^===============================================================================
+  ^Slot\s+Mda\s+Provisioned Type\s+Admin\s+Operational
+  ^\s+Equipped Type \(if different\)\s+State\s+State\s*$$
+  ^------------------------------------------------------------------------------- -> Mda
+
+Mda
+  ^${SLOT}\s+${MDA}\s+${TYPE}\s+${ADMIN_STATE}\s+${OPERATIONAL_STATE}\s*$$ -> Hardware
+  ^\s*${MDA}\s+${TYPE}\s+${ADMIN_STATE}\s+${OPERATIONAL_STATE}\s*$$ -> Hardware
+
+Hardware
+  ^\s*Hardware Data
+  ^\s*Platform type\s+:\s+\S+$$
+  ^\s*Part number\s+:\s+${PART_NUMBER}\s*$$
+  ^\s*CLEI code\s+:\s+\S*$$
+  ^\s*Serial number\s+:\s+${SERIAL_NUMBER}\s*$$
+  ^===============================================================================
+  ^MDA \d+/\d+ detail -> Record Start

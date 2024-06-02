@@ -1,0 +1,34 @@
+Value SLOT (\S+)
+Value TYPE (\S+)
+Value ADMIN_STATE (up|down)
+Value OPERATIONAL_STATE (\S+)
+Value PART_NUMBER (\S+)
+Value SERIAL_NUMBER (\S+)
+
+Start
+  ^===============================================================================
+  ^Card \S+
+  ^===============================================================================
+  ^Slot\s+Provisioned Type\s+Admin Operational\s+Comments
+  ^\s+Equipped Type \(if different\)\s+State State\s*$$
+  ^------------------------------------------------------------------------------- -> Record Slot
+
+Slot
+  ^${SLOT}\s+${TYPE}\s+${ADMIN_STATE}\s+${OPERATIONAL_STATE}.*$$
+  ^\s*Hardware Data
+  ^\s*Platform type\s+:\s+\S+$$
+  ^\s*Part number\s+:\s+${PART_NUMBER}\s*$$
+  ^\s*CLEI code\s+:\s+\S*$$
+  ^\s*Serial number\s+:\s+${SERIAL_NUMBER}\s*$$
+  ^\s*Manufacture date\s+:\s+\S*$$
+  ^\s*Manufacturing deviations\s+:\s+\S*$$
+  ^\s*Manufacturing assembly number\s+:\s+\S*$$
+  ^\s*Administrative state\s+:\s+\S*$$
+  ^\s*Operational state\s+:\s+\S*$$
+  ^\s*Software boot \(rom\) version\s+:\s+\S*$$
+  ^\s*Software version\s+:\s+(\S|\s)+$$
+  ^\s*Time of last boot\s+:\s+\S+\s+\S*$$
+  ^\s*Current alarm state\s+:\s+\S+\s+\S*$$
+  ^\s*Base MAC address\s+:\s+\S*$$
+  ^\s*Firmware revision status\s+:\s+\S*$$
+  ^\s*Memory capacity\s+:\s+\S+\s+\S*$$ -> Start

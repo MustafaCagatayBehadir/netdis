@@ -1,0 +1,6 @@
+Value HOSTNAME (.+)
+Value PLATFORM (.+)
+
+Start
+  ^\s*Name\s*:\s*${HOSTNAME}\s*$$
+  ^\s*Type\s*:\s*${PLATFORM}\s*$$ -> Record
