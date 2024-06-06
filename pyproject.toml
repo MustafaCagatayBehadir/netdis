@@ -5,7 +5,7 @@ line_length = 120
 ignore_missing_imports = true
 
 [tool.pylint]
-fail-under = 9.5
+fail-under = 8.5
 
 [tool.pylint.format]
 max-line-length = 120

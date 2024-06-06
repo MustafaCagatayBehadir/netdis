@@ -1,0 +1,22 @@
+Value PORT (\S+)
+Value Required STATUS (\S+)
+Value TYPE (\S+)
+Value MODEL_NUMBER (.+)
+Value CONNECTOR_CODE (\S+)
+Value SERIAL_NUMBER (\S+)
+Value PART_NUMBER (\S+)
+
+Start
+  ^=============================================================================== -> Record Port
+
+Port
+  ^\s*Interface\s+:\s+${PORT}.*$$
+  ^\s*Transceiver Data\s*$$
+  ^\s*Transceiver Status\s+:\s+${STATUS}\s*$$
+  ^\s*Transceiver Type\s+:\s+${TYPE}.*$$
+  ^\s*Model Number\s+:\s+${MODEL_NUMBER}\s*$$
+  ^\s*TX Laser Wavelength:\s+\d+\s+nm\s+Diag Capable\s+:\s+\S+\s*$$
+  ^\s*Connector Code\s+:\s+${CONNECTOR_CODE}\s+Vendor OUI\s+:\s+\S+\s*$$
+  ^\s*Manufacture date\s+:\s+\S+\s+Media\s+:\s+\S+\s*$$
+  ^\s*Serial Number\s+:\s+${SERIAL_NUMBER}\s*$$
+  ^\s*Part Number\s+:\s+${PART_NUMBER}\s*$$ -> Start

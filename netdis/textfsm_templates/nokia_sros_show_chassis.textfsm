@@ -1,6 +1,10 @@
 Value HOSTNAME (.+)
 Value PLATFORM (.+)
+Value NUM_SLOT (\d+)
+Value NUM_OPER_SLOT (\d+)
 
 Start
   ^\s*Name\s*:\s*${HOSTNAME}\s*$$
-  ^\s*Type\s*:\s*${PLATFORM}\s*$$ -> Record
+  ^\s*Type\s*:\s*${PLATFORM}\s*$$
+  ^\s*Number of slots\s*:\s*${NUM_SLOT}\s*$$
+  ^\s*Oper number of slots\s*:\s*${NUM_OPER_SLOT}\s*$$ -> Record

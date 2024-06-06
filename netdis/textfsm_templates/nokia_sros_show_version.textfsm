@@ -2,4 +2,4 @@ Value VERSION (\S+)
 Value DEVICE (\S+ \S+)
 
 Start
-  ^TiMOS-${VERSION} \S+ Nokia ${DEVICE} Copyright .* -> Record
+  ^\s*${VERSION} \S+ Nokia ${DEVICE} Copyright .* -> Record
