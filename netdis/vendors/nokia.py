@@ -8,7 +8,7 @@ from typing import List, Tuple
 import textfsm
 from database import get_db_engine
 from netmiko import ConnectHandler
-from sqlalchemy import Column, MetaData, String, Table, inspect
+from sqlalchemy import Column, MetaData, String, Table
 from sqlalchemy.dialects.postgresql import insert
 
 # Define the device information
