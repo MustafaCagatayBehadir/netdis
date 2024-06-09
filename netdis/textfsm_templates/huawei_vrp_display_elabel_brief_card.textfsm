@@ -1,0 +1,12 @@
+Value TYPE (\S+)
+Value SLOT_ID (\d+)
+Value PART_NUMBER (\S+)
+Value SERIAL_NUMBER (\S+)
+Value DESCRIPTION (.+)
+
+Start
+  ^Elabel brief information:
+  ^-------------------------------------------------------------------------------------------------------------------------------------------------
+  ^Slot #          BoardType                                BarCode                 Description                                                     
+  ^-------------------------------------------------------------------------------------------------------------------------------------------------
+  ^${TYPE}\s${SLOT_ID}\s+${PART_NUMBER}\s+${SERIAL_NUMBER}\s+${DESCRIPTION}$$ -> Record  

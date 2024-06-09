@@ -1,0 +1,14 @@
+Value Filldown SLOT_ID (\d+)
+Value Required TYPE (\S+)
+Value MDA_ID (\d+)
+Value PART_NUMBER (\S+)
+Value SERIAL_NUMBER (\S+)
+Value DESCRIPTION (.+)
+
+Start
+  ^Elabel brief information:
+  ^-------------------------------------------------------------------------------------------------------------------------------------------------
+  ^Slot #          BoardType                                BarCode                 Description                                                     
+  ^-------------------------------------------------------------------------------------------------------------------------------------------------
+  ^\S+\s${SLOT_ID}\s+\S+\s+\S+\s+.+\s*$$
+  ^\s+${TYPE}\s${MDA_ID}\s+${PART_NUMBER}\s+${SERIAL_NUMBER}\s+${DESCRIPTION}\s*$$ -> Record

@@ -11,5 +11,8 @@
 #
 Template, Hostname, Platform, Command
 
+nokia_sros_show_card_detail.textfsm, .*, nokia_sros, show card detail
 nokia_sros_show_chassis.textfsm, .*, nokia_sros, show chassis
+nokia_sros_show_mda_detail.textfsm, .*, nokia_sros, show mda detail
+nokia_sros_show_port_detail.textfsm, .*, nokia_sros, show port detail
 nokia_sros_show_version.textfsm, .*, nokia_sros, show version

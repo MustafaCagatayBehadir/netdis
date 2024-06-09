@@ -40,3 +40,18 @@ services:
       - ${GF_PROVISIONING_DIRECTORY}:/etc/grafana/provisioning
     networks:
       - bts-discovery
+
+  rabbitmq:
+    container_name: bts-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+    volumes:
+      - ${RABBITMQ_DATA}:/var/lib/rabbitmq
+    networks:
+      - bts-discovery

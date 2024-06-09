@@ -1,2 +1,5 @@
 .venv
 netdis/__pycache__
+netdis/vendors/__pycache__
+netdis/vendors/outputs/__pycache__
+data
