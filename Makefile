@@ -16,5 +16,5 @@ format:
 clean:
 	find netdis/ -type f -name "*.pyc" | xargs rm -fr
 	find netdis/ -type d -name __pycache__ | xargs rm -fr
-	find netdis/ -type d -name .mypy_cache | xargs rm -fr
+	sudo find ./ -type d -name .mypy_cache | xargs rm -fr
 	
