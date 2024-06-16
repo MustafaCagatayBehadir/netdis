@@ -5,22 +5,15 @@ and saves the outputs to a PostgreSQL database.
 
 from netmiko import ConnectHandler
 
-from netdis.vendors.vendor_base import VendorBase
+from common.vendor_base import VendorBase
 
 
 class NokiaSros(VendorBase):
     """
-    A class representing a Nokia SROS device.
+    This class represents a Nokia SROS device.
 
-    Args:
-        device_type (str): The type of the device.
-        host (str): The hostname or IP address of the device.
-        username (str): The username for authentication.
-        password (str): The password for authentication.
-
-    Attributes:
-        device (dict): A dictionary containing the device information.
-
+    It provides methods to connect to the device, retrieve information using show commands,
+    and save the outputs to a PostgreSQL database.
     """
 
     def version_info(self, _net_connect):
@@ -33,7 +26,7 @@ class NokiaSros(VendorBase):
         """
         table_name = 'nokia_version'
         output = _net_connect.send_command('show version')
-        template_path = self.template_path + 'nokia_sros_show_version.textfsm'
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_version.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         self.recreate_table(table_name, headers)
         self.insert_data_to_table(table_name, headers, parsed_output)
@@ -47,7 +40,7 @@ class NokiaSros(VendorBase):
 
         """
         output = _net_connect.send_command('show chassis')
-        template_path = self.template_path + 'nokia_sros_show_chassis.textfsm'
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_chassis.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         table_name = 'nokia_chassis'
         self.recreate_table(table_name, headers)
@@ -62,7 +55,7 @@ class NokiaSros(VendorBase):
 
         """
         output = _net_connect.send_command('show card detail')
-        template_path = self.template_path + 'nokia_sros_show_card_detail.textfsm'
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_card_detail.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         table_name = 'nokia_card'
         self.recreate_table(table_name, headers)
@@ -77,7 +70,7 @@ class NokiaSros(VendorBase):
 
         """
         output = _net_connect.send_command('show mda detail')
-        template_path = self.template_path + 'nokia_sros_show_mda_detail.textfsm'
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_mda_detail.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         table_name = 'nokia_mda'
         self.recreate_table(table_name, headers)
@@ -92,9 +85,52 @@ class NokiaSros(VendorBase):
 
         """
         output = _net_connect.send_command('show port detail')
-        template_path = self.template_path + 'nokia_sros_show_port_detail.textfsm'
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_port_detail.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         table_name = 'nokia_transceiver'
+        self.recreate_table(table_name, headers)
+        self.insert_data_to_table(table_name, headers, parsed_output)
+
+    def service_sdp_info(self, _net_connect):
+        """
+        Retrieves the service SDP (Service Data Point) information of the Nokia SROS device.
+
+        Args:
+            _net_connect: The Netmiko SSH connection object.
+
+        """
+        output = _net_connect.send_command('show service sdp')
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_service_sdp.textfsm'
+        headers, parsed_output = self.parse_output(output, template_path)
+        table_name = 'nokia_service_sdp'
+        self.recreate_table(table_name, headers)
+        self.insert_data_to_table(table_name, headers, parsed_output)
+
+    def service_sap_using_info(self, _net_connect):
+        """
+        Retrieves the service SAP (Service Access Point) using information of the Nokia SROS device.
+
+        Args:
+            _net_connect: The Netmiko SSH connection object.
+        """
+        output = _net_connect.send_command('show service sap-using')
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_service_sap-using.textfsm'
+        headers, parsed_output = self.parse_output(output, template_path)
+        table_name = 'nokia_service_sap_using'
+        self.recreate_table(table_name, headers)
+        self.insert_data_to_table(table_name, headers, parsed_output)
+
+    def service_sdp_using_info(self, _net_connect):
+        """
+        Retrieves the service SDP (Service Data Point) using information of the Nokia SROS device.
+
+        Args:
+            _net_connect: The Netmiko SSH connection object.
+        """
+        output = _net_connect.send_command('show service sdp-using')
+        template_path = self.discovery_templates_dir + '/nokia_sros_show_service_sdp-using.textfsm'
+        headers, parsed_output = self.parse_output(output, template_path)
+        table_name = 'nokia_service_sdp_using'
         self.recreate_table(table_name, headers)
         self.insert_data_to_table(table_name, headers, parsed_output)
 
@@ -107,3 +143,6 @@ if __name__ == '__main__':
         device.card_info(net_connect)
         device.mda_info(net_connect)
         device.transceiver_info(net_connect)
+        device.service_sdp_info(net_connect)
+        device.service_sap_using_info(net_connect)
+        device.service_sdp_using_info(None)

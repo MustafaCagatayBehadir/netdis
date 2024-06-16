@@ -5,8 +5,7 @@ and saves the outputs to a PostgreSQL database.
 
 from netmiko import ConnectHandler
 
-from netdis.vendors.outputs.huawei import outputs
-from netdis.vendors.vendor_base import VendorBase
+from common.vendor_base import VendorBase
 
 
 class HuaweiVrp(VendorBase):
@@ -17,7 +16,7 @@ class HuaweiVrp(VendorBase):
     and save the outputs to a PostgreSQL database.
     """
 
-    def version_info(self, _net_connect=None):
+    def version_info(self, _net_connect):
         """
         Retrieves the version information of the Huawei VRP device.
 
@@ -26,14 +25,13 @@ class HuaweiVrp(VendorBase):
 
         """
         table_name = 'huawei_version'
-        # output = _net_connect.send_command('display version')
-        output = outputs['display_version']
-        template_path = self.template_path + 'huawei_vrp_display_version.textfsm'
+        output = _net_connect.send_command('display version')
+        template_path = self.discovery_templates_dir + '/huawei_vrp_display_version.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         self.recreate_table(table_name, headers)
         self.insert_data_to_table(table_name, headers, parsed_output)
 
-    def card_info(self, _net_connect=None):
+    def card_info(self, _net_connect):
         """
         Retrieves the main slot information of the Huawei VRP device.
 
@@ -42,14 +40,13 @@ class HuaweiVrp(VendorBase):
 
         """
         table_name = 'huawei_card'
-        # output = _net_connect.send_command('display elabel brief')
-        output = outputs['display_elabel_brief']
-        template_path = self.template_path + 'huawei_vrp_display_elabel_brief_card.textfsm'
+        output = _net_connect.send_command('display elabel brief')
+        template_path = self.discovery_templates_dir + '/huawei_vrp_display_elabel_brief_card.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         self.recreate_table(table_name, headers)
         self.insert_data_to_table(table_name, headers, parsed_output)
 
-    def mda_info(self, _net_connect=None):
+    def mda_info(self, _net_connect):
         """
         Retrieves the daughter card information of the Huawei VRP device.
 
@@ -58,9 +55,8 @@ class HuaweiVrp(VendorBase):
 
         """
         table_name = 'huawei_mda'
-        # output = _net_connect.send_command('display elabel brief')
-        output = outputs['display_elabel_brief']
-        template_path = self.template_path + 'huawei_vrp_display_elabel_brief_mda.textfsm'
+        output = _net_connect.send_command('display elabel brief')
+        template_path = self.discovery_templates_dir + '/huawei_vrp_display_elabel_brief_mda.textfsm'
         headers, parsed_output = self.parse_output(output, template_path)
         self.recreate_table(table_name, headers)
         self.insert_data_to_table(table_name, headers, parsed_output)
@@ -73,12 +69,18 @@ class HuaweiVrp(VendorBase):
             _net_connect: The Netmiko SSH connection object.
 
         """
+        table_name = 'huawei_transceiver'
+        output = _net_connect.send_command('display elabel brief')
+        template_path = self.discovery_templates_dir + '/huawei_vrp_display_elabel.textfsm'
+        headers, parsed_output = self.parse_output(output, template_path)
+        self.recreate_table(table_name, headers)
+        self.insert_data_to_table(table_name, headers, parsed_output)
 
 
 if __name__ == '__main__':
     device = HuaweiVrp('huawei_vrp', 'clab-vm-vrp', 'admin', 'password')
-    # with ConnectHandler(**device.device) as net_connect:
-    #     device.display_version(net_connect)
-    device.version_info()
-    device.card_info()
-    device.mda_info()
+    with ConnectHandler(**device.device) as net_connect:
+        device.version_info(net_connect)
+        device.card_info(net_connect)
+        device.mda_info(net_connect)
+        device.transceiver_info(net_connect)

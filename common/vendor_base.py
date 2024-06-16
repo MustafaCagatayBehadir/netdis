@@ -11,13 +11,17 @@ The module includes the following functions:
 
 from typing import List, Tuple
 
+import database
 import textfsm
+from jinja2 import Environment, FileSystemLoader
 from sqlalchemy import Column, MetaData, String, Table
 from sqlalchemy.dialects.postgresql import insert
 
-from netdis.database import get_db_engine
+CONFIGURATION_TEMPLATES_DIR = 'configuration/templates'
+DISCOVERY_TEMPLATES_DIR = 'discovery/templates'
 
-engine = get_db_engine('postgres', 'postgres', 'bts')
+engine = database.get_db_engine('postgres', 'postgres', 'bts')
+env = Environment(loader=FileSystemLoader(CONFIGURATION_TEMPLATES_DIR))
 metadata = MetaData()
 metadata.bind = engine
 
@@ -34,7 +38,7 @@ class VendorBase:
     """
 
     def __init__(self, device_type: str, host: str, username: str, password: str) -> None:
-        self.template_path = 'netdis/textfsm_templates/'
+        self.discovery_templates_dir = DISCOVERY_TEMPLATES_DIR
         self.device = {
             'device_type': device_type,
             'host': host,
@@ -91,8 +95,39 @@ class VendorBase:
         headers = ['HOSTNAME'] + headers
         with engine.connect() as connection:
             for row in parsed_output:
-                row = [self.device.get('host')] + [_.strip() for _ in row]
+                row = [self.device.get('host', '')] + [_.strip() for _ in row]
                 data = dict(zip(headers, row))
                 stmt = insert(table).values(**data).on_conflict_do_nothing()
                 connection.execute(stmt)
             connection.commit()
+
+    def render_template(self, template_name, **kwargs):
+        """
+        Render the specified template with the given keyword arguments.
+
+        Args:
+            template_name (str): The name of the template to render.
+            **kwargs: Keyword arguments to pass to the template.
+
+        Returns:
+            str: The rendered template.
+
+        """
+        template = env.get_template(template_name)
+        return template.render(**kwargs)
+
+    def generate_config(self, template_name, config_data):
+        """
+        Generate the configuration file for the specified device type using the given configuration data.
+
+        Args:
+            template_name (str): The name of the template to render.
+            config_data (dict): The configuration data.
+
+        Returns:
+            str: The generated configuration file.
+
+        """
+        template_name = f"{template_name}.j2"
+        config = self.render_template(template_name, **config_data)
+        return config

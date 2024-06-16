@@ -1,0 +1,21 @@
+Value Filldown BOARD_ID (\d+/\d+)
+Value Required PORT_ID (\d+)
+Value TYPE (\S+)
+Value SERIAL_NUMBER (\S+)
+Value DESCRIPTION (.+)
+Value VENDOR (\S+)
+
+Start
+  ^\[Daughter_Board_${BOARD_ID}\] -> DaughterBoardSection
+
+DaughterBoardSection
+  ^\[Port_${PORT_ID}] -> PortSection
+  ^\[Daughter_Board_${BOARD_ID}\] -> DaughterBoardSection
+
+PortSection
+  ^\s*\[Board Properties\]
+  ^BoardType=${TYPE}
+  ^BarCode=${SERIAL_NUMBER}
+  ^Description=${DESCRIPTION}
+  ^Manufactured=\d{4}-\d{2}-\d{2}
+  ^VendorName=${VENDOR} -> Record DaughterBoardSection
