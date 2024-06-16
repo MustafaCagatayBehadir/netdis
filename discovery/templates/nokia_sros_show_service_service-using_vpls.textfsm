@@ -1,0 +1,24 @@
+Value Required SERVICE_ID (\d+)
+Value Required TYPE (\S+)
+Value Required ADMIN_STATE (Up|Down)
+Value Required OPER_STATE (Up|Down)
+Value Required CUSTOMER_ID (\d+)
+Value Required SERVICE_NAME (\S+)
+
+Start
+  ^=+
+  ^Services\s+\[vpls\]
+  ^=+
+  ^ServiceId\s+Type\s+Adm\s+Opr\s+CustomerId\s+Service Name\s*$$ -> HEADER
+  ^. -> Error
+
+HEADER
+  ^\-+$$ -> SERVICES
+  ^. -> Error
+
+SERVICES
+  ^${SERVICE_ID}\s+${TYPE}\s+${ADMIN_STATE}\s+${OPER_STATE}\s+${CUSTOMER_ID}\s+${SERVICE_NAME} -> Record
+  ^-+
+  ^Matching Services :\s+\d+\s*$$
+  ^-+
+  ^=+

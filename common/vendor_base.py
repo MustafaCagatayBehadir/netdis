@@ -11,11 +11,12 @@ The module includes the following functions:
 
 from typing import List, Tuple
 
-import database
 import textfsm
 from jinja2 import Environment, FileSystemLoader
 from sqlalchemy import Column, MetaData, String, Table
 from sqlalchemy.dialects.postgresql import insert
+
+from . import database
 
 CONFIGURATION_TEMPLATES_DIR = 'configuration/templates'
 DISCOVERY_TEMPLATES_DIR = 'discovery/templates'
