@@ -1,0 +1,16 @@
+Value NAME (.+)
+Value DESCRIPTION (.+)
+Value REMOTE_IP (\S+)
+Value LDP_ID (\S+)
+Value TRANSPORT_ADDRESS (\S+)
+Value ENTITY_STATUS (\S+)
+
+Start
+  ^\s+LDP Remote Entity Information\s*$$
+  ^\s*-+$$ -> REMOTE_PEER
+
+REMOTE_PEER
+  ^\s*Remote Peer Name\s+:\s+${NAME}\s*$$
+  ^\s*Description\s+:\s+${DESCRIPTION}\s*$$ 
+  ^\s*Remote Peer IP\s+:\s+${REMOTE_IP}\s+LDP ID\s+:\s+${LDP_ID}\s*$$
+  ^\s*Transport Address\s+:\s+${TRANSPORT_ADDRESS}\s+Entity Status\s+:\s+${ENTITY_STATUS}\s*$$ -> Record

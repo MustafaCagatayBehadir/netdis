@@ -1,0 +1,19 @@
+Value Filldown VSI_NAME (\S+)
+Value Filldown SIGNALING (\S+)
+Value Required PEER (\S+)
+Value Required VC_ID (\d+)
+Value Required LOCAL_VC_LABEL (\d+)
+Value Required REMOTE_VC_LABEL (\S+)
+Value Required STATE (\S+)
+
+Start
+  ^VSI Name: ${VSI_NAME}\s+Signaling: ${SIGNALING}\s*$$
+  ^-+\s*$$
+  ^Peer\s+Transport\s+Local\s+Remote\s+VC\s*$$
+  ^Addr\s+VC ID\s+VC Label\s+VC Label\s+State\s*$$ -> PEER_INFO
+  ^. -> Error
+
+PEER_INFO
+  ^-+\s*$$
+  ^\s*${PEER}\s+${VC_ID}\s+${LOCAL_VC_LABEL}\s+${REMOTE_VC_LABEL}\s+${STATE}\s*$$ -> Record
+  ^\s*$$ -> Start

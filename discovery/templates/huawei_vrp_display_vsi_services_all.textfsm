@@ -1,0 +1,14 @@
+Value Required INTERFACE (\S+)
+Value Required VSI (\S+)
+Value Required ADMIN_STATE (up|down)
+Value Required OPER_STATE (up|down)
+
+Start
+  ^Total:\s+\d+\s*$$
+  ^Code: AS\(Admin Status\), PS\(Physical Status\)\s*$$
+  ^-+\s*$$
+  ^Interface/Bridge-domain\s+Vsi Name\s+AS\s+PS\s*$$
+  ^-+\s*$$
+  ^${INTERFACE}\s+${VSI}\s+${ADMIN_STATE}\s+${OPER_STATE}\s*$$ -> Record
+  ^-+\s*$$ -> EOF
+  ^. -> Error

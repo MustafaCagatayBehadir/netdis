@@ -1,0 +1,212 @@
+                         LDP Remote Entity Information
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermpls_10.245.13.1
+ Description       : ----
+ Remote Peer IP    : 10.245.13.1          LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028510/2192837
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermpls_10.245.13.2
+ Description       : ----
+ Remote Peer IP    : 10.245.13.2          LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028518/2193801
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermp_10.245.13.3
+ Description       : ----
+ Remote Peer IP    : 10.245.13.3          LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028509/2193770
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermp_10.245.13.20
+ Description       : ----
+ Remote Peer IP    : 10.245.13.20         LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028512/2193410
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermp_00_t4_1
+ Description       : ----
+ Remote Peer IP    : 10.245.14.1          LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028520/2193212
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peermp_00_t3_2
+ Description       : ----
+ Remote Peer IP    : 10.245.14.6          LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028482/0
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : 34_t3_1
+ Description       : ----
+ Remote Peer IP    : 10.245.245.3         LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028483/0
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : peer_34_atn_25x
+ Description       : ----
+ Remote Peer IP    : 10.245.245.49        LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028516/2007826
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : mpls-peer_17
+ Description       : ----
+ Remote Peer IP    : 10.245.245.50        LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028484/1947627
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : testqqq
+ Description       : ----
+ Remote Peer IP    : 10.245.245.51        LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 40 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028485/1947662
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ Remote Peer Name  : testqqq1
+ Description       : ----
+ Remote Peer IP    : 10.245.245.52        LDP ID        : 10.245.245.48:0
+ Transport Address : 10.245.245.48        Entity Status : Active
+
+ Configured Keepalive Hold Timer : 45 Sec
+ Configured Keepalive Send Timer : ----
+ Configured Hello Hold Timer     : 45 Sec
+ Negotiated Hello Hold Timer     : 45 Sec
+ Configured Hello Send Timer     : ----
+ Configured Delay Timer          : 10 Sec
+ Hello Packet sent/received      : 2028483/0
+ Label Advertisement Mode        : Downstream Unsolicited
+ Auto-config                     : ----
+ Manual-config                   : effective
+ Session-Protect effect          : NO
+ Session-Protect Duration        : ----
+ Session-Protect Remain          : ----
+ ------------------------------------------------------------------------------
+ TOTAL: 11 Remote-Peer(s) Found.

@@ -1,0 +1,17 @@
+Value Required NAME (\S+)
+Value Required MEMBER_DISCOVERY (\S+)
+Value Required PW_TYPE (\S+)
+Value Required MAC_LEARN_MODE (\S+)
+Value Required ENCAP_TYPE (\S+)
+Value Required MTU (\d+)
+Value Required VSI_STATE (up|down)
+
+Start
+  ^Total\s+VSI\s+number\s+is\s+\d+,\s+\d+\s+is\s+up,\s+\d+\s+is\s+down,\s+\d+\s+is\s+LDP\s+mode,\s+\d+\s+is\s+BGP\s+mode,\s+\d+\s+is\s+BGPAD\s+mode,\s+\d+\s+is\s+mixed\s+mode,\s+\d+\s+is\s+unspecified\s+mode\s*$$
+  ^-+\s*$$
+  ^Vsi\s+Mem\s+PW\s+Mac\s+Encap\s+Mtu\s+Vsi\s*$$
+  ^Name\s+Disc\s+Type\s+Learn\s+Type\s+Value\s+State\s*$$
+  ^-+\s*$$
+  ^${NAME}\s+${MEMBER_DISCOVERY}\s+${PW_TYPE}\s+${MAC_LEARN_MODE}\s+${ENCAP_TYPE}\s+${MTU}\s+${VSI_STATE}\s*$$ -> Record
+  ^-+\s*$$ -> EOF
+  ^. -> Error

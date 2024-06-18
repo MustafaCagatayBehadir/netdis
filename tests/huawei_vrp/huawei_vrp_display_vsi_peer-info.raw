@@ -1,0 +1,170 @@
+VSI Name: 34_h4_1|spirent                             Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.20        1998       52292      --          down
+10.245.245.49       1998       52293      --          down
+
+VSI Name: Epipe-1187|040000298093                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.3         1187       48152      --          down
+
+VSI Name: Epipe-1188|040000298093                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.3         1188       48153      --          down
+
+VSI Name: Epipe-1189|040000291114                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.3         1189       48154      --          down
+
+VSI Name: Epipe-1193|040000288538                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.3         1193       48155      --          down
+
+VSI Name: Epipe-126|12345678998                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.14.1         126        48157      --          down
+
+VSI Name: Epipe-127|22345678976                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       127        48160      --          down
+
+VSI Name: Epipe-129|32345678976                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       129        48161      --          down
+
+VSI Name: Epipe-162|22345679001                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       162        48162      --          down
+
+VSI Name: Epipe-163|22345679001                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       163        48163      --          down
+
+VSI Name: Epipe-165|22345679002                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       165        48164      --          down
+
+VSI Name: Epipe-168|22345679006                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       168        48165      --          down
+
+VSI Name: Epipe-171|22345679005                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.1         171        48146      --          down
+
+VSI Name: Epipe-172|22345679005                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.1         172        48147      --          down
+
+VSI Name: Epipe-173|22345679005                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.1         173        48148      --          down
+
+VSI Name: Epipe-174|22345679005                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.1         174        48149      --          down
+
+VSI Name: Epipe-175|22345679005                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.1         175        48150      --          down
+
+VSI Name: Epipe-560|223456745004                      Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       560        48166      --          down
+
+VSI Name: Epipe-88|12345678989                        Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       88         48159      --          down
+
+VSI Name: Epipe-917|22345678994                       Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.3         917        48151      --          down
+
+VSI Name: Vsi2000                                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.245.49       2000       48167      --          down
+10.245.245.50       2000       48168      --          down
+10.245.245.153      2000       48169      --          down
+
+VSI Name: Vsi5002                                     Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.14.6         1000010000 48158      --          down
+
+VSI Name: hub-spoke-epipe                             Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.13.20        429429     48156      --          down
+
+VSI Name: sw_test_                                    Signaling: ldp
+--------------------------------------------------------------------
+Peer                Transport  Local      Remote      VC
+Addr                VC ID      VC Label   VC Label    State
+--------------------------------------------------------------------
+10.245.247.1        1234       48170      --          down

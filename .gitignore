@@ -1,5 +1,7 @@
 .venv
-netdis/__pycache__
-netdis/vendors/__pycache__
-netdis/vendors/outputs/__pycache__
+common/__pycache__
+configuration/__pycache__
+configuration/vendors/__pycache__
+discovery/__pycache__
+discovery/vendors/__pycache__
 data
